@@ -24,3 +24,14 @@ jobs:
 
      - name: PHPStan
        uses: php-actions/phpstan@v3
+
+  test_output:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: step1
+        id: step_1
+        run: |
+          echo ::set-output name=VERSION::v1.0
+      - name: step2
+        run: |
+           echo "La version ${{ steps.step_1.outputs.VERSION }} est déployée"
