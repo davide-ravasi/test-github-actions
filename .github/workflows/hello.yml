@@ -9,6 +9,9 @@ jobs:
         run: |
           echo 'Hello'
           echo 'World'
+      - name: connect
+        run: |
+          echo "Connect to server with password ${{ secrets.MY_PASSWORD }}"
   build:
     name: Build System Project
     runs-on: ubuntu-18.04
